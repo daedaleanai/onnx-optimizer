@@ -26,6 +26,7 @@
 #include "onnxoptimizer/passes/extract_constant_to_initializer.h"
 #include "onnxoptimizer/passes/fuse_add_bias_into_conv.h"
 #include "onnxoptimizer/passes/fuse_bn_into_conv.h"
+#include "onnxoptimizer/passes/fuse_cast_into_initializer.h"
 #include "onnxoptimizer/passes/fuse_consecutive_concats.h"
 #include "onnxoptimizer/passes/fuse_consecutive_log_softmax.h"
 #include "onnxoptimizer/passes/fuse_consecutive_reduce_unsqueeze.h"
@@ -65,6 +66,7 @@ struct GlobalPassRegistry {
     registerPass<ExtractConstantToInitializer>();
     registerPass<FuseAddBiasIntoConv>();
     registerPass<FuseBNIntoConv>();
+    registerPass<FuseCastIntoInitializer>();
     registerPass<FuseConsecutiveConcats>();
     registerPass<FuseConsecutiveLogSoftmax>();
     registerPass<FuseConsecutiveReduceUnsqueeze>();
