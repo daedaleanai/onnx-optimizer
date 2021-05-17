@@ -61,7 +61,7 @@ struct FuseCastIntoInitializer final : public PredicateBasedPass {
     Tensor newTensor;
     newTensor.elem_type() = node->i(kto);
     newTensor.sizes() = oldTensor->sizes();
-    size_t num_elements = oldTensor->size_from_dim(0);
+    size_t num_elements = oldTensor->sizes().empty() ? 1 :num_elements = oldTensor->size_from_dim(0); 
 
     switch (newTensor.elem_type()) {
     case 1:
